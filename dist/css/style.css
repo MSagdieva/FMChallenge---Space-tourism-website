@@ -133,8 +133,9 @@ h2.title {
 .main-heading {
   margin-top: -50px;
   width: 100%;
+  height: 100vh;
   top: 0;
-  background: url("../img/main-heading.jpg");
+  background: url("../img/home/background-home-desktop.jpg");
   background-size: cover;
 }
 
@@ -142,6 +143,9 @@ h2.title {
   position: absolute;
   right: 30px;
   border: 2px solid rgb(255, 255, 255);
+  background-color: #fff;
+  color: #000;
+  border-radius: 50%;
   font-size: calc(14px + 8 * ((100vw - 320px) / 1600));
   padding: 15px 40px;
 }
@@ -235,74 +239,6 @@ h2.title {
 
 .main-content .info-block ~ .info-block {
   margin-top: 30px;
-}
-
-.footer__content {
-  background-color: #024BD6;
-  color: #fff;
-  font-family: "Open Sans";
-  font-weight: 300;
-}
-
-.footer__container {
-  font-size: calc(10px + 4 * ((100vw - 320px) / 1600));
-}
-
-.footer__container hr.line {
-  border-width: 0;
-  height: 1px;
-  background-color: rgb(168, 168, 168);
-}
-
-.footer .menu__body {
-  width: 60%;
-  min-width: 400px;
-}
-
-.contacts {
-  font-weight: 600;
-  display: flex;
-}
-
-.contacts__adress {
-  display: inline-block;
-  flex-grow: 2;
-  flex-basis: 250px;
-  text-align: center;
-  margin: 36px 0;
-}
-
-.contacts__phone {
-  display: inline-block;
-  flex-grow: 1;
-  margin: 34px 0;
-}
-
-.contacts__email {
-  display: inline-block;
-  flex-grow: 1;
-  margin: 36px 0;
-  text-align: right;
-}
-
-.phone-number {
-  font-size: 18px;
-  margin: 0;
-}
-
-.copyright {
-  display: flex;
-  padding: 20px 0;
-  justify-content: space-between;
-}
-
-.copyright__text {
-  flex-grow: 1;
-}
-
-.copyright__author {
-  flex-grow: 1;
-  text-align: right;
 }
 
 @media (max-width: 1122px) {
@@ -534,29 +470,5 @@ h2.title {
 
   .main-content .ill {
     position: static;
-  }
-
-  .contacts {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .contacts__adress {
-    flex-basis: 0;
-    margin: 10px 0;
-  }
-
-  .contacts__email {
-    text-align: center;
-    margin: 10px 0;
-  }
-
-  .copyright {
-    flex-wrap: wrap;
-    text-align: center;
-  }
-
-  .copyright__author {
-    text-align: center;
   }
 }
