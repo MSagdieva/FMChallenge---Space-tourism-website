@@ -27,13 +27,13 @@ View each page and be able to toggle between the tabs to see new information
 
 ### Screenshot
 
-![screenshot1](https://github.com/MSagdieva/FMChallenge---huddle-landing-page-with-alternating-feature-blocks/blob/main/screenshot.PNG)
-![screenshot2](https://github.com/MSagdieva/FMChallenge---huddle-landing-page-with-alternating-feature-blocks/blob/main/screenshot2.PNG)
+![screenshot1](https://github.com/MSagdieva/FMChallenge---Space-tourism-website)
+![screenshot2](https://github.com/MSagdieva/FMChallenge---Space-tourism-website)
 
 ### Links
 
-- Solution URL: [GitHub Page](https://github.com/FMChallenge---huddle-landing-page-with-alternating-feature-blocks)
-- Live Site URL: [Live site URL](https://fm-challenge-huddle-landing-page-with-alternating-fea-msagdieva.vercel.app)
+- Solution URL: [GitHub Page](https://github.com/MSagdieva/FMChallenge---Space-tourism-website)
+- Live Site URL: [Live site URL]()
 
 ## My process
 
