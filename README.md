@@ -52,7 +52,7 @@ Basics skills:
 
 ```scss
 ``` 
- ```
+
 
 ### Useful resources
 - [CSS reference book](https://cssreference.io/)
