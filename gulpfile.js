@@ -32,14 +32,15 @@ let path = {
         html: project_folder+"/",
         css: project_folder+"/css/",
         js: project_folder+"/js/",
-        img: project_folder+"/img/",
+        img: project_folder+"/assets/",
         fonts: project_folder+"/fonts/",  
 },
     src:{
         html: source_folder+"/*.html",
         scss: source_folder+"/scss/style.scss",
         js: source_folder+"/js/script.js",
-        img: source_folder+"/img/**/*.{jpg,png,svg,gif,ico,webp,jpeg}",
+        js2: source_folder+"/js/innerPageScripts.js",
+        img: source_folder+"/assets/**/*.{jpg,png,svg,gif,ico,webp,jpeg}",
         fonts: source_folder+"/fonts/*.ttf",  
 },
     watch: {
@@ -112,6 +113,17 @@ function js(){
     .pipe(browserSync.stream())
 }
 
+function js2(){
+    return src(path.src.js2)
+    .pipe(fileinclude())
+    .pipe(dest(path.build.js))
+    .pipe(rename({
+        extname: '.min.js'
+    }))
+    .pipe(dest(path.build.js))
+    .pipe(browserSync.stream())
+}
+
 function images(){
     return src(path.src.img)
     .pipe(webp({
@@ -142,6 +154,7 @@ function watchFiles(params){
     gulp.watch([path.watch.html],html)
     gulp.watch([path.watch.scss],css)
     gulp.watch([path.watch.js],js)
+    gulp.watch([path.watch.js],js2)
     gulp.watch([path.watch.img],images)
 }
 function clean(){
@@ -156,8 +169,8 @@ return del(path.clean);
 //     .pipe(dest('src/fonts'));
 // })
 
-const dev = gulp.series(clean, gulp.parallel(js, css, fonts, html));
-let build=gulp.series(clean, gulp.parallel(js, css, fonts, html, images));
+const dev = gulp.series(clean, gulp.parallel(js, js2, css, fonts, html));
+let build=gulp.series(clean, gulp.parallel(js, js2, css, fonts, html, images));
 let watch=gulp.parallel(build, watchFiles, browsersync);
 gulp.task('default', watch);
 export { dev, build, watch }

@@ -135,7 +135,7 @@ h2.title {
   width: 100%;
   height: 100vh;
   top: 0;
-  background: url("../img/home/background-home-desktop.jpg");
+  background: url("../assets/home/background-home-desktop.jpg");
   background-size: cover;
 }
 
@@ -239,6 +239,86 @@ h2.title {
 
 .main-content .info-block ~ .info-block {
   margin-top: 30px;
+}
+
+body.inner-page-body .wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body.inner-page-body .tabs {
+  position: relative;
+  margin: 3rem 0;
+  background: #1abc9c;
+  height: 14.75rem;
+}
+
+body.inner-page-body .tabs::before,
+body.inner-page-body .tabs::after {
+  content: "";
+  display: table;
+}
+
+body.inner-page-body .tabs::after {
+  clear: both;
+}
+
+body.inner-page-body .tab {
+  float: left;
+}
+
+body.inner-page-body .tab-switch {
+  display: none;
+}
+
+body.inner-page-body .tab-label {
+  position: relative;
+  display: block;
+  line-height: 2.75em;
+  height: 3em;
+  padding: 0 1.618em;
+  background: #1abc9c;
+  border-right: 0.125rem solid #16a085;
+  color: #fff;
+  cursor: pointer;
+  top: 0;
+  transition: all 0.25s;
+}
+
+body.inner-page-body .tab-label:hover {
+  top: -0.25rem;
+  transition: top 0.25s;
+}
+
+body.inner-page-body .tab-content {
+  height: 12rem;
+  position: absolute;
+  z-index: 1;
+  top: 2.75em;
+  left: 0;
+  padding: 1.618rem;
+  background: #fff;
+  color: #2c3e50;
+  border-bottom: 0.25rem solid #bdc3c7;
+  opacity: 0;
+  transition: all 0.35s;
+}
+
+body.inner-page-body .tab-switch:checked + .tab-label {
+  background: #fff;
+  color: #2c3e50;
+  border-bottom: 0;
+  border-right: 0.125rem solid #fff;
+  transition: all 0.35s;
+  z-index: 1;
+  top: -0.0625rem;
+}
+
+body.inner-page-body .tab-switch:checked + label + .tab-content {
+  z-index: 2;
+  opacity: 1;
+  transition: all 0.35s;
 }
 
 @media (max-width: 1122px) {

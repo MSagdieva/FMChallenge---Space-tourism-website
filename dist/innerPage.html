@@ -8,12 +8,12 @@
     <meta charset="utf-8">
     <title>Space tourism Site</title>
     <meta name="description" content="">
-    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon-32x32.png" type="image/x-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
-  <body>
+  <body class="inner-page-body">
     <header class="header">
       <div class="header__content">
         <nav class="header__menu">
@@ -24,15 +24,24 @@
             <div class="menu__body">
               <ul class="menu__list">
                 <li class="menu__link"><a href="/">00 Home</a></li>
-                <li class="menu__link"><a href="/innerPage.html">01 Destination</a></li>
-                <li class="menu__link"><a href="/innerPage.html">02 Crew</a></li>
-                <li class="menu__link"><a href="/innerPage.html">03 Technology</a></li>
+                <li class="menu__link"><a href="/innerPage.html?page=dest">01 Destination</a></li>
+                <li class="menu__link"><a href="/innerPage.html?page=crew">02 Crew</a></li>
+                <li class="menu__link"><a href="/innerPage.html?page=tech">03 Technology</a></li>
               </ul>
             </div>
           </div>
         </nav>
       </div>
     </header>
-    <script src='js/script.js'></script>
+    <main>
+      <div class="main-heading">
+        <div class="main-heading__container">
+          <h1 class="main-heading__title title inner-page-title"></h1>
+          <div class="info-block__container">
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src='js/innerPageScripts.js'></script>
   </body>
 </html>
