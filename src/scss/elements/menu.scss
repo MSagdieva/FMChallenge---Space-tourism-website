@@ -1,5 +1,7 @@
 .menu {
     display: block;
+    max-width: 830px;
+    margin:120px;
     &__list {
         display: flex;
         list-style: none;
@@ -30,8 +32,7 @@
             height: initial;
             overflow: scroll;
             right: 50px;
-            margin: 20px;
-            background-color:rgba(0, 91, 193, 1);}
+            margin: 20px;}
             &:hover{
                 background-color:rgba(255, 255, 255, 0.6);
                 .menu__link{
@@ -44,16 +45,21 @@
     }
 
     &__link {
-        font-size: 14px;
+        font-size: 16px;
         font-family: $SecondFontFamily;
-        font-weight: 600;
+        font-weight: 400;
         margin: 0;
         padding:20px;
+        letter-spacing: 2.7px;
+        text-transform: uppercase;
         color: rgba(255, 255, 255, 1);
         transition: all 0.3s ease-in;
+        & .number{
+            font-weight: 700;
+        }
         @media (max-width: $md3+px) {
             padding: 5px 0 5px 0;
-            margin: 0 20px 0 0;
+            margin: 0 48px 0 0;
         }
         @media (max-width: $md4+px) {
             font-size: 20px;
@@ -62,8 +68,31 @@
             margin: 20px;
         }
         &:hover{
-            transform: scaleX(1.2) scaleY(1.2);
-
+            position: relative;
+            &::after{
+                content: "";
+                display: block;
+                height: 2px;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: -20px;
+                background: rgba(255, 255, 255, 0.04);
+                backdrop-filter: blur(40.7742px);
+            }
+        }
+    }
+    &__link.active{
+        position: relative;
+        &::after{
+            content: "";
+            display: block;
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            background-color: #fff;
         }
     }
     &__burger-icon{

@@ -8,3 +8,5 @@ window.addEventListener('click', function(e){
 
     }});
 ;
+const menuLink = document.getElementsByClassName("menu__link")[0];
+menuLink.classList.add('active');

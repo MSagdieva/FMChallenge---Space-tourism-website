@@ -1,5 +1,4 @@
 .main-heading {
-            margin-top:-50px;
             width: 100%;
             height: 100vh;
             top:0;
@@ -12,25 +11,32 @@
 
         }
     &__btn {
-        position: absolute;
-        right: 30px;
-        border: 2px solid rgba(255, 255, 255, 1);
         background-color: #fff;
         color: #000;
+        font-family: $fontFamily;
         border-radius: 50%;
-        @include adaptive-value('font-size', 22, 14, 0);
-        padding: 15px 40px;
+        letter-spacing: 4.75;
+        height: 274px;
+        width: 274px;
+        @include adaptive-value('font-size', 28, 14, 0);
         @media (max-width:$md3+px) {
-            padding: 5px 10px;
         }
         @media (max-width: $md4+px) {
             right: 50%;
-            transform: translateX(50%);
         }
     }
 
     &__container {
-        padding: 100px 20px;
+        height: calc(100% - 165px);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: 0 165px 130px 165px;
+    }
+    &__container .main-heading__row:first-child{
+        max-width: 450px;
+    }
+    &__container .main-heading__row:last-child{
     }
 
     &__content {
@@ -48,9 +54,11 @@
     }
 
     &__block {
-        margin: 202px 0 0 140px;
+        color: #fff;
+        font-family: $SecondFontFamily;
+        font-weight: 400;
+        width: 100%;
         @media (max-width: $md4+px) {
-            margin: 50px 0 0 20px;
             width: 100%;
         }
     }
@@ -58,17 +66,30 @@
     &__title {
         line-height: 1.5;
         color:#fff;
-        text-align: center;
-        @include adaptive-value('font-size', 48, 38, 0);
-        text-transform: none;
+        font-weight: 400;
+        font-size: 150px;
         margin:0;
         @media (max-width: $md4+px) {
             font-size: 30px;
         }
     }
+    &__intro-title{
+        font-family: $SecondFontFamily;
+        text-transform: uppercase;
+        color:#fff;
+        font-weight: 400;
+        font-size: 28px;
+        letter-spacing: 4.725px;
+        font-style: normal;
+    }
 
     &__text {
-        @include adaptive-value('font-size', 16, 14, 0);
+        font-size: 18px;
+        letter-spacing: 2.7px;
+        line-height: 1.8;
+        font-family: $SecondFontFamily;
+        font-weight: 400;
+        font-style: normal;
         // @media (max-width: $md4+px) {
         // }
     }

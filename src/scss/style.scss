@@ -1,9 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Oswald:regular&display=swap&subset=cyrillic-ext");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,regular,600&display=swap&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&display=swap");
 @import url('/src/scss/normalize.css');
 
 @import 'mixins/adaptive-value';
 @import 'support/variables';
+
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("/fonts/BarlowCondensed-Regular.woff2");
+}
 
 // ---------------main-components-styles-----------------------//
 body{
@@ -56,7 +60,7 @@ h2.title{
 }
 .btn {
     font-family: $SecondFontFamily;
-    font-weight: 600;
+    font-weight: 400;
     line-height: calc(22 / 16) * 100%;
     text-transform: uppercase;
     display: inline-flex;
