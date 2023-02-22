@@ -4,15 +4,60 @@ body.inner-page-body{
   padding: 0;
   margin: 0;
   .wrapper {
-    max-width: 50rem;
     width: 100%;
     margin: 0 auto;
+    font-family: $SecondFontFamily;
+    &.dest-wrapper{
+      hr.line{
+        border-color: #979797;
+      }
+      .features{
+        display: flex;
+        justify-content: space-between;
+        .feature-name{
+          font-family: 'Barlow Condensed';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 17px;
+          letter-spacing: 2.3625px;
+          text-transform: uppercase;
+          color: #D0D6F9;
+        }
+        .feature-value{
+          font-family: 'Bellefair';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 28px;
+          line-height: 32px;
+          text-transform: uppercase;
+          color: #FFFFFF;
+        }
+      }
+    }
+    &.tech-wrapper{
+      
+    }
+    &.crew-wrapper{
+      .crew-tabs .tab-content{
+        flex-direction: row-reverse;
+      }
+      .tab-label:after{
+        content:"\26AB";
+
+      }
+      .tab-switch:checked+.tab-label::after{
+        content:"\26AB";
+        top: 0;
+        bottom: 0;
+      }
+    }
   }
   .tabs {
     position: relative;
     margin: 3rem 0;
-    background: #1abc9c;
-    height: 14.75rem;
+    display: flex;
+    justify-content: flex-end;
   }
   .tabs::before,
   .tabs::after {
@@ -29,48 +74,74 @@ body.inner-page-body{
     display: none;
   }
   .tab-label {
+    font-family: $SecondFontFamily;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+    color: #D0D6F9;
     position: relative;
     display: block;
-    line-height: 2.75em;
-    height: 3em;
-    padding: 0 1.618em;
-    background: #1abc9c;
-    border-right: 0.125rem solid #16a085;
-    color: #fff;
+    line-height: 19.2px;
+    margin: 0 0.8em;
     cursor: pointer;
     top: 0;
-    transition: all 0.25s;
   }
   .tab-label:hover {
-    top: -0.25rem;
-    transition: top 0.25s;
+
   }
   .tab-content {
-    height: 12rem;
     position: absolute;
     z-index: 1;
     top: 2.75em;
     left: 0;
     padding: 1.618rem;
-    background: #fff;
-    color: #2c3e50;
-    border-bottom: 0.25rem solid #bdc3c7;
     opacity: 0;
-    transition: all 0.35s;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    &__title{
+      font-family: 'Bellefair';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 100px;
+      line-height: 115px;
+      color: #FFFFFF;
+    }
+    .img-container{
+      max-width: 50%;
+    }
+    .text-container{
+      font-family: $SecondFontFamily;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 32px;
+      color: #D0D6F9;
+      width: 400px;
+      .text{
+        font-size: inherit;
+      }
+    }
   }
   .tab-switch:checked + .tab-label {
-    background: #fff;
-    color: #2c3e50;
-    border-bottom: 0;
-    border-right: 0.125rem solid #fff;
-    transition: all 0.35s;
     z-index: 1;
-    top: -0.0625rem;
+    &::after{
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: #D0D6F9;
+  }
   }
   .tab-switch:checked + label + .tab-content {
     z-index: 2;
     opacity: 1;
-    transition: all 0.35s;
   }
     .inner-page-content{
       width: 100%;
@@ -87,13 +158,14 @@ body.inner-page-body{
     }
       
       &.crew{
+        overflow-y: hidden;
         background-image: url("../assets/crew/background-crew-desktop.jpg");
     }
       
       &.tech{
         background-image: url("../assets/technology/background-technology-desktop.jpg");       
       }
-
+      
       &__main-heading{
         padding-top: 210px;
       }

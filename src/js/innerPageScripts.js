@@ -1,6 +1,12 @@
 @@include('burgerShow.js');
 @@include('getUrlParams.js');
 
+window.addEventListener("load",()=>{
+const firstTabtext = document.querySelector(".tab .text-container");
+const lastTabLabel = document.querySelector(".dest .tab:last-child .tab-label");
+if (lastTabLabel != null) {lastTabLabel.style.marginRight = 170 + "px";
+console.log(document.body.clientWidth, Math.ceil(firstTabtext.getBoundingClientRect().right) )}});
+
 let page = getQueryPageParam();
 let pageNumber = 0;
 let pageInfoData=[];
@@ -60,22 +66,34 @@ function fetchInfoForDescription(pageNumber){
 function paintPage(pageNumber){
     const infoContainer = document.getElementsByClassName("inner-page-content__info-container")[0];
     let tabs;
+    let cont;
     switch (pageNumber){
         case 1:
             tabs = getDestTabs();
+            cont = '<div class="wrapper dest-wrapper">'+
+                    '<div class="tabs dest-tabs">'+tabs
+                    '</div>'+
+                '</div>';
             break;
         case 2:
-            tabs = getDestTabs();
+            tabs = getCrewTabs();
+            cont = '<div class="wrapper crew-wrapper">'+
+                '<div class="tabs crew-tabs">'+tabs
+                '</div>'+
+            '</div>';
             break;
         case 3:
-            tabs = getDestTabs();
+            tabs = getTechTabs();
+            cont = '<div class="wrapper tech-wrapper">'+
+                '<div class="tabs tech-tabs">'+tabs
+                '</div>'+
+            '</div>';
             break;  
     }
-    let cont = '<div class="wrapper">'+
-    '<div class="tabs">'+tabs
-    '</div>'+
-'</div>';
+
     infoContainer.innerHTML=cont;
+    const firstTab = document.querySelector("#tab-1");
+    firstTab.checked = true;
 }
 
 
@@ -84,14 +102,20 @@ function getDestTabs(){
     let tabCounter=1;
     for (let page of pageInfoData){
         tabs+= '<div class="tab">'+
-        `<input type="radio" name="css-tabs" id="tab-${tabCounter}" checked class="tab-switch">`+
+        `<input type="radio" name="css-tabs" id="tab-${tabCounter}" class="tab-switch">`+
         `<label for="tab-${tabCounter}" class="tab-label">${page.name}</label>`+
         '<div class="tab-content">'+
             '<div class="img-container">'+
-            `<img src="${page.images.png}" alt="" class="ill">`+
-        '</div>'+
-            `<div class="text-container">${page.description}</div>`+
-        '</div>'+
+                `<img src="${page.images.png}" alt="" class="ill">`+
+            '</div>'+
+            `<div class="text-container">`+ `<h2 class="title tab-content__title">${page.name}</h2>`
+            +`<div class="text">${page.description}</div>`+
+            `<hr class="line">`+
+            `<div class="features"><div class="feature-label"><p class="feature-name">Avg. distance</p>
+            <p class="feature-value">${page.distance}</p></div>`+
+            `<div class="feature-label"><p class="feature-name">Est. travel time</p>
+            <p class="feature-value">${page.travel}</p></div></div>`+
+        '</div>'+`</div>`+
     '</div>';
     tabCounter++;
     }
@@ -101,15 +125,19 @@ return tabs;
 function getCrewTabs(){
     let tabs='';
     let tabCounter=1;
+    console.log(pageInfoData);
     for (let page of pageInfoData){
         tabs+= '<div class="tab">'+
-        `<input type="radio" name="css-tabs" id="tab-${tabCounter}" checked class="tab-switch">`+
-        `<label for="tab-${tabCounter}" class="tab-label">${page.name}</label>`+
+        `<input type="radio" name="css-tabs" id="tab-${tabCounter}" class="tab-switch">`+
+        `<label for="tab-${tabCounter}" class="tab-label"></label>`+
         '<div class="tab-content">'+
             '<div class="img-container">'+
             `<img src="${page.images.png}" alt="" class="ill">`+
         '</div>'+
-            `<div class="text-container">${page.description}</div>`+
+            `<div class="text-container">
+            `+
+            `<h2>${page.role}</h2> <h3> ${page.name}</h3>`+`${page.bio}`+
+            `</div>`+
         '</div>'+
     '</div>';
     tabCounter++;
@@ -122,11 +150,11 @@ function getTechTabs(){
     let tabCounter=1;
     for (let page of pageInfoData){
         tabs+= '<div class="tab">'+
-        `<input type="radio" name="css-tabs" id="tab-${tabCounter}" checked class="tab-switch">`+
+        `<input type="radio" name="css-tabs" id="tab-${tabCounter}" class="tab-switch">`+
         `<label for="tab-${tabCounter}" class="tab-label">${page.name}</label>`+
         '<div class="tab-content">'+
             '<div class="img-container">'+
-            `<img src="${page.images.png}" alt="" class="ill">`+
+            `<img src="${page.images.portrait}" alt="" class="ill">`+
         '</div>'+
             `<div class="text-container">${page.description}</div>`+
         '</div>'+
