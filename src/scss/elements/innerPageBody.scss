@@ -43,21 +43,25 @@ body.inner-page-body{
         flex-direction: row-reverse;
       }
       .tab-label:after{
-        content:"\26AB";
-
-      }
-      .tab-switch:checked+.tab-label::after{
-        content:"\26AB";
-        top: 0;
-        bottom: 0;
-      }
+          content:"\26AB";
+          display: block;
+          height: 2px;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-color: #D0D6F9;
     }
+  }
   }
   .tabs {
     position: relative;
     margin: 3rem 0;
     display: flex;
     justify-content: flex-end;
+    &.crew-tabs{
+      justify-content: flex-start;
+    }
   }
   .tabs::before,
   .tabs::after {
@@ -128,16 +132,6 @@ body.inner-page-body{
   }
   .tab-switch:checked + .tab-label {
     z-index: 1;
-    &::after{
-      content: "";
-      display: block;
-      height: 2px;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-      background-color: #D0D6F9;
-  }
   }
   .tab-switch:checked + label + .tab-content {
     z-index: 2;
@@ -145,7 +139,7 @@ body.inner-page-body{
   }
     .inner-page-content{
       width: 100%;
-      height: 100%;
+      min-height: 100%;
       background-size: cover;
   @media (max-width:$md3+px) {
       background-clip: content-box;
@@ -155,19 +149,40 @@ body.inner-page-body{
   }
       &.dest{
         background-image: url("../assets/destination/background-destination-desktop.jpg");
+        @media (max-width:$md3+px) {
+          background-image: url("../assets/destination/background-destination-tablet.jpg");
+      }
+      @media (max-width:$md4+px) {
+        background-image: url("../assets/destination/background-destination-mobile.jpg");
+      }
     }
       
       &.crew{
         overflow-y: hidden;
         background-image: url("../assets/crew/background-crew-desktop.jpg");
+        @media (max-width:$md3+px) {
+          background-image: url("../assets/destination/background-crew-tablet.jpg");
+      }
+      @media (max-width:$md4+px) {
+        background-image: url("../assets/destination/background-crew-mobile.jpg");
+      }
     }
       
       &.tech{
-        background-image: url("../assets/technology/background-technology-desktop.jpg");       
+        background-image: url("../assets/technology/background-technology-desktop.jpg");
+        @media (max-width:$md3+px) {
+          background-image: url("../assets/technology/background-technology-tablet.jpg");
+      }
+      @media (max-width:$md4+px) {
+        background-image: url("../assets/technology/background-technology-tablet.jpg");
+      } 
       }
       
       &__main-heading{
         padding-top: 210px;
+        @media (max-height: 760px){
+          padding-top: 80px;
+        }
       }
       &__container{
 

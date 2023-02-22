@@ -5,10 +5,18 @@
             background: url("../assets/home/background-home-desktop.jpg");
             background-size: cover;
         @media (max-width:$md3+px) {
-            background-clip: content-box;
-            background-repeat: no-repeat;
-            background-position: center;
-
+            // background-clip: content-box;
+            // background-repeat: no-repeat;
+            // background-position: center;
+            background: url("../assets/home/background-home-tablet.jpg");
+            background-size: cover;
+        }
+        @media (max-width:$md4+px) {
+            // background-clip: content-box;
+            // background-repeat: no-repeat;
+            // background-position: center;
+            background: url("../assets/home/background-home-mobile.jpg");
+            background-size: cover;
         }
     &__btn {
         background-color: #fff;
@@ -32,6 +40,9 @@
         justify-content: space-between;
         align-items: flex-end;
         margin: 0 165px 130px 165px;
+        @media (max-width:$md3+px) {
+            display: block;
+        }
     }
     &__container .main-heading__row:first-child{
         max-width: 450px;
