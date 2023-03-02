@@ -5,5 +5,6 @@ window.addEventListener('click', function(e){
     if ((target2 != document.getElementsByClassName('page')[0])&&(target2.closest('div').classList.contains('menu__burger-icon')) || (target2.classList.contains('menu__burger-icon')))
     {
         menu.classList.toggle('active');
+        burger.classList.toggle('active');
 
     }});

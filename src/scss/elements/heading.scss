@@ -27,10 +27,14 @@
         height: 274px;
         width: 274px;
         @include adaptive-value('font-size', 28, 14, 0);
-        @media (max-width:$md3+px) {
+        @media (max-width: $md3+px) {
+            height: 242px;
+            width: 242px;
         }
         @media (max-width: $md4+px) {
-            right: 50%;
+            height: 150px;
+            width: 150px;
+            font-size: 20px;
         }
     }
 
@@ -39,15 +43,31 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        margin: 0 165px 130px 165px;
+        padding: 0 165px 130px 165px;
+        @media (max-width:$md2+px) {
+            padding: 130px 60px 0 60px;
+        }
         @media (max-width:$md3+px) {
             display: block;
+        }
+        @media (max-width:$md4+px) {
+            padding: 72px 24px 24px 24px;
         }
     }
     &__container .main-heading__row:first-child{
         max-width: 450px;
+        @media (max-width:$md2+px) {
+            max-width: initial;
+            width: 100%;
+            text-align: center;
+        }
     }
     &__container .main-heading__row:last-child{
+        @media (max-width:$md2+px) {
+            max-width: initial;
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &__content {
@@ -80,8 +100,13 @@
         font-weight: 400;
         font-size: 150px;
         margin:0;
+        @media (max-width: 505px) {
+            font-size: 80px;
+            line-height: 100px;
+        }
         @media (max-width: $md4+px) {
-            font-size: 30px;
+            font-size: 80px;
+            line-height: 100px;
         }
     }
     &__intro-title{
@@ -92,6 +117,11 @@
         font-size: 28px;
         letter-spacing: 4.725px;
         font-style: normal;
+        margin: 0;
+        @media (max-width: $md4+px) {
+            font-size: 16px;
+            line-height: 19px;
+        }
     }
 
     &__text {
@@ -101,7 +131,10 @@
         font-family: $SecondFontFamily;
         font-weight: 400;
         font-style: normal;
-        // @media (max-width: $md4+px) {
-        // }
+        @media (max-width: $md3+px) {
+            font-size: 16px;
+        }
+        @media (max-width: $md4+px) {
+        }
     }
 }

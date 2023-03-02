@@ -136,7 +136,7 @@ function getCrewTabs(){
         '</div>'+
             `<div class="text-container">
             `+
-            `<h2>${page.role}</h2> <h3> ${page.name}</h3>`+`${page.bio}`+
+            `<h2 class="crew__role">${page.role}</h2> <h3 class="crew__name"> ${page.name}</h3>`+`${page.bio}`+
             `</div>`+
         '</div>'+
     '</div>';
@@ -151,12 +151,16 @@ function getTechTabs(){
     for (let page of pageInfoData){
         tabs+= '<div class="tab">'+
         `<input type="radio" name="css-tabs" id="tab-${tabCounter}" class="tab-switch">`+
-        `<label for="tab-${tabCounter}" class="tab-label">${page.name}</label>`+
+        `<label for="tab-${tabCounter}" class="tab-label"></label>`+
         '<div class="tab-content">'+
             '<div class="img-container">'+
-            `<img src="${page.images.portrait}" alt="" class="ill">`+
+            `<picture>
+            <source media="(max-width: 992px)" srcset="${page.images.landscape}" />
+            <img src="${page.images.portrait}" alt="" />
+          </picture>`+
         '</div>'+
-            `<div class="text-container">${page.description}</div>`+
+            `<div class="text-container">`+
+            `<h3 class="text-container__label">The terminology…</h3> <h2 class="title tab-content__title">${page.name}</h2>`+`${page.description}</div>`+
         '</div>'+
     '</div>';
     tabCounter++;
