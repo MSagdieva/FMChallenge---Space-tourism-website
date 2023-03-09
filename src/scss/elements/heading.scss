@@ -5,16 +5,10 @@
             background: url("../assets/home/background-home-desktop.jpg");
             background-size: cover;
         @media (max-width:$md3+px) {
-            // background-clip: content-box;
-            // background-repeat: no-repeat;
-            // background-position: center;
             background: url("../assets/home/background-home-tablet.jpg");
             background-size: cover;
         }
         @media (max-width:$md4+px) {
-            // background-clip: content-box;
-            // background-repeat: no-repeat;
-            // background-position: center;
             background: url("../assets/home/background-home-mobile.jpg");
             background-size: cover;
         }
@@ -51,7 +45,10 @@
             display: block;
         }
         @media (max-width:$md4+px) {
-            padding: 72px 24px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            // padding: 72px 24px 24px 24px;
         }
     }
     &__container .main-heading__row:first-child{

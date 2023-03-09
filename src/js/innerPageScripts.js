@@ -4,7 +4,7 @@
 window.addEventListener("load",()=>{
 const firstTabtext = document.querySelector(".tab .text-container");
 const lastTabLabel = document.querySelector(".dest .tab:last-child .tab-label");
-if (lastTabLabel != null) {lastTabLabel.style.marginRight = 170 + "px";
+if (lastTabLabel != null && window.clientWidth>500) {lastTabLabel.style.marginRight = 170 + "px";
 console.log(document.body.clientWidth, Math.ceil(firstTabtext.getBoundingClientRect().right) )}});
 
 let page = getQueryPageParam();
@@ -136,7 +136,7 @@ function getCrewTabs(){
         '</div>'+
             `<div class="text-container">
             `+
-            `<h2 class="crew__role">${page.role}</h2> <h3 class="crew__name"> ${page.name}</h3>`+`${page.bio}`+
+            `<h2 class="crew__role">${page.role}</h2> <h3 class="crew__name"> ${page.name}</h3>`+`<p class="crew__bio">${page.bio}</p>`+
             `</div>`+
         '</div>'+
     '</div>';
@@ -156,7 +156,7 @@ function getTechTabs(){
             '<div class="img-container">'+
             `<picture>
             <source media="(max-width: 992px)" srcset="${page.images.landscape}" />
-            <img src="${page.images.portrait}" alt="" />
+            <img src="${page.images.portrait}" alt="" class="ill"/>
           </picture>`+
         '</div>'+
             `<div class="text-container">`+
