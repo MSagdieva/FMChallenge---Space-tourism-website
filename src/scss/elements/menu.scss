@@ -85,13 +85,16 @@
                 bottom: -20px;
                 background: rgba(255, 255, 255, 0.04);
                 backdrop-filter: blur(40.7742px);
-
+                @media (max-width: $md4+px){
+                    display: none;
+                }
             }
         }
     }
     &__link:first-child{
     @media (max-width: $md4+px){
-        margin-top: 70px;}}
+        margin-top: 70px;}
+    }
     &__link.active{
         position: relative;
         &::after{

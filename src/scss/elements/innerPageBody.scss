@@ -126,7 +126,7 @@ body.inner-page-body{
     }
       .img-container{
         position:relative;
-        left: 65px;
+        right: -100px;
         overflow: hidden;
         @media (max-width:$md2+px) {
           max-width: initial;
@@ -154,7 +154,7 @@ body.inner-page-body{
         padding-left: 60px;
         margin: 3rem .8rem;
         z-index: 4;
-        top:100px;
+        top: 100px;
       }
 
       .tab-label:after{
@@ -215,15 +215,31 @@ body.inner-page-body{
         justify-content: space-between;
         padding: 0;
         @media (max-width:$md2+px) {
-          flex-direction: column;
+          flex-direction: column-reverse;
           align-items: center;
+      }
+      @media (max-width:$md4+px) {
+        flex-direction: column;
+        align-items: center;
+    }
+      }
+      .crew-tabs{
+        @media (max-width:$md2+px) {
+        justify-content: center;
       }
       }
       .tab-label{
-      bottom: -275px;
-      left: 550%;
+      bottom: -400px;
+      left: 0;
       z-index: 4;
       top: initial;
+      @media (max-width:$md2+px) {
+        bottom: -270px;
+      }
+      @media (max-width:$md4+px) {
+        bottom: -280px;
+        left: - 50%;
+      }
         }
       .tab-label:after{
           content:"\26AB";
@@ -246,6 +262,10 @@ body.inner-page-body{
       mix-blend-mode: normal;
       opacity: 0.5;
       margin: 0;
+      @media (max-width:$md2+px) {
+        font-size: 24px;
+        line-height: 28px;
+    }
       @media (max-width:$md4+px) {
         font-size: 16px;
         line-height: 18px;
@@ -260,6 +280,10 @@ body.inner-page-body{
       text-transform: uppercase;
       color: #FFFFFF;
       margin: 0;
+      @media (max-width:$md2+px) {
+        font-size: 40px;
+        line-height: 46px;
+    }
       @media (max-width:$md4+px) {
         font-size: 24px;
         line-height: 28px;
@@ -274,8 +298,11 @@ body.inner-page-body{
       width: 50%;
       @media (max-width:$md2+px) {
         width: 100%;
-        margin-top: 60px;
+        margin-bottom: 60px;
     }
+    @media (max-width:$md4+px) {
+      margin-top: 60px;
+  }
     }
     .img-container{
       @media (max-width:$md4+px) {
@@ -403,6 +430,7 @@ body.inner-page-body{
 
   }
       &.dest{
+        overflow-y: hidden;
         background-image: url("../assets/destination/background-destination-desktop.jpg");
         @media (max-width:$md3+px) {
           background-image: url("../assets/destination/background-destination-tablet.jpg");
@@ -424,6 +452,7 @@ body.inner-page-body{
     }
       
       &.tech{
+        overflow-y: hidden;
         background-image: url("../assets/technology/background-technology-desktop.jpg");
         @media (max-width:$md3+px) {
           background-image: url("../assets/technology/background-technology-tablet.jpg");
@@ -434,14 +463,14 @@ body.inner-page-body{
       }
       
       &__main-heading{
-        padding-top: 210px;
-        @media (max-width: $md2+px) and (max-height: $md2+px){
+        padding-top: 110px;
+        @media (max-width: $md2+px) and (max-height: $md3+px){
           padding-top: 30px;
         }
-        @media (max-width:$md3+px) and (max-height: $md2+px) {
+        @media (max-width:$md3+px) and (max-height: $md3+px) {
           padding-top: 20px;
       }
-      @media (max-width:$md4+px) and (max-height: $md2+px) {
+      @media (max-width:$md4+px) and (max-height: $md3+px) {
         padding-top: 100px;
     }
       }
