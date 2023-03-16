@@ -2,10 +2,18 @@
 @@include('getUrlParams.js');
 
 window.addEventListener("load",()=>{
-const firstTabtext = document.querySelector(".tab .text-container");
-const lastTabLabel = document.querySelector(".dest .tab:last-child .tab-label");
-if (lastTabLabel != null && window.clientWidth>500) {lastTabLabel.style.marginRight = 170 + "px";
-console.log(document.body.clientWidth, Math.ceil(firstTabtext.getBoundingClientRect().right) )}});
+    const firstTabtext = document.querySelector(".tab .text-container");
+    const lastTabLabel = document.querySelector(".dest .tab:last-child .tab-label"); 
+    let widthDif = firstTabtext.getBoundingClientRect().width - 280;
+    let widthRigth = document.body.clientWidth - Math.ceil(firstTabtext.getBoundingClientRect().right);
+    console.log(document.body.clientWidth);
+    if (lastTabLabel != null && document.body.clientWidth>500) {
+        console.log(widthDif, widthRigth);
+            lastTabLabel.style.marginRight = widthRigth + widthDif - 20 + "px";
+    }
+        }
+    );
+
 
 let page = getQueryPageParam();
 let pageNumber = 0;
@@ -18,21 +26,18 @@ function startPageRender(page){
     const content = document.getElementsByClassName("inner-page-content")[0];
     switch (page) {
         case "dest":{
-            console.log("start dest!");
             pageTitle.innerHTML = "<span class='number'>01</span> Pick your destination";
             pageNumber = 1;
             content.classList.add('dest');
             break;
         }
         case "crew":{
-            console.log("start crew!");
             pageTitle.innerHTML = "<span class='number'>02</span> Meet your crew";
             pageNumber = 2;
             content.classList.add('crew');
             break;
         }
         case "tech":{
-            console.log("start tech!");
             pageTitle.innerHTML = "<span class='number'>03</span> Space launch 101";
             pageNumber = 3;
             content.classList.add('tech');
