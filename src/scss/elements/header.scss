@@ -20,21 +20,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        &:after{
-            position:absolute;
-            content: '';
-            width: 30%;
-            height: 1px;
-            background: #FFFFFF;
-            mix-blend-mode: normal;
-            opacity: 0.25;
-            left: 170px;
-            top: 50%;
-            @media (max-width: $md2+px) {
-                display: none;
-            }
-        }
-
     }
     &__icon-container{
         @media (max-width: $md3+px) {

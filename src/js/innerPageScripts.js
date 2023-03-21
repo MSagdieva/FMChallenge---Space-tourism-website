@@ -3,14 +3,17 @@
 
 window.addEventListener("load",()=>{
     const firstTabtext = document.querySelector(".tab .text-container");
-    const lastTabLabel = document.querySelector(".dest .tab:last-child .tab-label"); 
-    let widthDif = firstTabtext.getBoundingClientRect().width - 280;
-    let widthRigth = document.body.clientWidth - Math.ceil(firstTabtext.getBoundingClientRect().right);
-    console.log(document.body.clientWidth);
-    if (lastTabLabel != null && document.body.clientWidth>500) {
-        console.log(widthDif, widthRigth);
-            lastTabLabel.style.marginRight = widthRigth + widthDif - 20 + "px";
-    }
+    const cont = document.querySelector(".dest ._container");
+    const firstTabLabel = document.querySelector(".dest .tab:first-child .tab-label"); 
+    //let widthDif = firstTabtext.getBoundingClientRect().width - 280;
+    let widthRigth = document.documentElement.clientWidth - Math.ceil(firstTabtext.getBoundingClientRect().right);
+    if (firstTabLabel != null && document.body.clientWidth>992 && document.body.clientWidth>1120) {
+            firstTabLabel.style.marginLeft = firstTabtext.getBoundingClientRect().left - widthRigth + 40 + "px";
+            }
+        else if (firstTabLabel != null && document.body.clientWidth>992 && document.body.clientWidth<1120)
+        {
+            firstTabLabel.style.marginLeft = firstTabtext.getBoundingClientRect().left - widthRigth - 20 + "px";
+        }
         }
     );
 
