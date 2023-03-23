@@ -27,8 +27,12 @@ View each page and be able to toggle between the tabs to see new information
 
 ### Screenshot
 
-![screenshot1](https://github.com/MSagdieva/FMChallenge---Space-tourism-website)
-![screenshot2](https://github.com/MSagdieva/FMChallenge---Space-tourism-website)
+![screenshot1](https://github.com/MSagdieva/FMChallenge---Space-tourism-website/blob/main/Space%20tourism%20multi-page%20website1.PNG)
+![screenshot2](https://github.com/MSagdieva/FMChallenge---Space-tourism-website/blob/main/Space%20tourism%20multi-page%20website2.PNG)
+![screenshot3](https://github.com/MSagdieva/FMChallenge---Space-tourism-website/blob/main/Space%20tourism%20multi-page%20website3.PNG)
+![screenshot4](https://github.com/MSagdieva/FMChallenge---Space-tourism-website/blob/main/Space%20tourism%20multi-page%20website4.PNG)
+![screenshot5](https://github.com/MSagdieva/FMChallenge---Space-tourism-website/blob/main/Space%20tourism%20multi-page%20website5.PNG)
+
 
 ### Links
 
