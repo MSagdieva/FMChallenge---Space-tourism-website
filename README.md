@@ -33,7 +33,7 @@ View each page and be able to toggle between the tabs to see new information
 ### Links
 
 - Solution URL: [GitHub Page](https://github.com/MSagdieva/FMChallenge---Space-tourism-website)
-- Live Site URL: [Live site URL]()
+- Live Site URL: [Live site URL](https://fm-challenge-space-tourism-website.vercel.app)
 
 ## My process
 

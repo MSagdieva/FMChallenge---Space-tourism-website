@@ -353,9 +353,11 @@ body.inner-page-body{
       @media (max-width:$md2+px) {
         width: 100%;
         margin-bottom: 60px;
+        max-width: 458px;
     }
     @media (max-width:$md4+px) {
       margin-top: 60px;
+      max-width: initial;
   }
     }
     .img-container{

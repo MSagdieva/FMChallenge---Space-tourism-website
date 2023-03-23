@@ -801,6 +801,7 @@ body.inner-page-body .inner-page-content__title .number {
   body.inner-page-body .wrapper.crew-wrapper .text-container {
     width: 100%;
     margin-bottom: 60px;
+    max-width: 458px;
   }
 
   body.inner-page-body .tabs.tech-tabs {
@@ -1262,6 +1263,7 @@ body.inner-page-body .inner-page-content__title .number {
 
   body.inner-page-body .wrapper.crew-wrapper .text-container {
     margin-top: 60px;
+    max-width: initial;
   }
 
   body.inner-page-body .wrapper.crew-wrapper .img-container {
