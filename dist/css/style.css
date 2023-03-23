@@ -426,7 +426,8 @@ body.inner-page-body .wrapper.tech-wrapper .text-container__label {
 
 body.inner-page-body .wrapper.tech-wrapper .img-container {
   position: relative;
-  right: -100px;
+  right: -200px;
+  top: -50px;
   overflow: hidden;
 }
 
@@ -608,7 +609,7 @@ body.inner-page-body .tab-content .text-container {
   font-size: 18px;
   line-height: 32px;
   color: #D0D6F9;
-  width: 400px;
+  width: 470px;
 }
 
 body.inner-page-body .tab-content .text-container .text {
@@ -641,7 +642,7 @@ body.inner-page-body .inner-page-content.crew {
 }
 
 body.inner-page-body .inner-page-content.tech {
-  overflow-y: hidden;
+  overflow: hidden;
   background-image: url("../assets/technology/background-technology-desktop.jpg");
 }
 
@@ -673,6 +674,16 @@ body.inner-page-body .inner-page-content__title .number {
 
   .menu:after {
     display: none;
+  }
+
+  body.inner-page-body .wrapper.tech-wrapper .tab-label:after {
+    left: -100px;
+  }
+}
+
+@media (max-width: 1025px) {
+  body.inner-page-body .wrapper.crew-wrapper .crew-tabs {
+    margin: 0;
   }
 }
 
@@ -728,28 +739,40 @@ body.inner-page-body .inner-page-content__title .number {
   body.inner-page-body .wrapper.tech-wrapper .tech-tabs .tab-content {
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  body.inner-page-body .wrapper.tech-wrapper .tech-tabs .tab-content__title {
+    font-size: 40px;
+    line-height: 46px;
   }
 
   body.inner-page-body .wrapper.tech-wrapper .img-container {
     max-width: initial;
     width: calc(100% + 40px);
     left: 0;
-  }
-
-  body.inner-page-body .wrapper.tech-wrapper .text-container {
-    margin-top: 160px;
+    top: 0;
+    height: 310px;
   }
 
   body.inner-page-body .wrapper.tech-wrapper .text-container {
     margin-top: 100px;
+    max-width: 458px;
+  }
+
+  body.inner-page-body .wrapper.tech-wrapper .tab-label {
+    left: 200%;
+    top: 350px;
+    transform: translateX(-100%);
   }
 
   body.inner-page-body .wrapper.tech-wrapper .tab-label:after {
-    bottom: -300px;
+    bottom: initial;
     height: 60px;
     width: 60px;
-    left: initial;
     font-size: 26px;
+    left: initial;
   }
 
   body.inner-page-body .wrapper.crew-wrapper .crew-tabs .tab-content {
@@ -791,6 +814,14 @@ body.inner-page-body .inner-page-content__title .number {
   body.inner-page-body .tab-content .text-container {
     text-align: center;
     width: 100%;
+  }
+
+  body.inner-page-body .inner-page-content.tech ._container {
+    padding: 0;
+  }
+
+  body.inner-page-body .inner-page-content__title {
+    padding-left: 40px;
   }
 }
 
@@ -878,6 +909,16 @@ body.inner-page-body .inner-page-content__title .number {
 
   .main-heading__text {
     font-size: 16px;
+  }
+
+  body.inner-page-body .wrapper.tech-wrapper .tab-label {
+    left: 100%;
+    transform: translateX(0);
+  }
+
+  body.inner-page-body .wrapper.tech-wrapper .tab-label:after {
+    bottom: initial;
+    left: initial;
   }
 
   body.inner-page-body .inner-page-content {
@@ -1161,8 +1202,12 @@ body.inner-page-body .inner-page-content__title .number {
 
   body.inner-page-body .wrapper.tech-wrapper .tech-tabs .tab-content {
     box-sizing: border-box;
-    padding: 0;
     overflow: hidden;
+  }
+
+  body.inner-page-body .wrapper.tech-wrapper .tech-tabs .tab-content__title {
+    font-size: 24px;
+    line-height: 28px;
   }
 
   body.inner-page-body .wrapper.tech-wrapper .img-container {
@@ -1171,8 +1216,19 @@ body.inner-page-body .inner-page-content__title .number {
     left: 0;
   }
 
+  body.inner-page-body .wrapper.tech-wrapper .text-container {
+    max-width: initial;
+    margin-top: 50px;
+  }
+
+  body.inner-page-body .wrapper.tech-wrapper .tab-label {
+    transform: translateX(0);
+    left: 30%;
+    top: 100px;
+  }
+
   body.inner-page-body .wrapper.tech-wrapper .tab-label:after {
-    bottom: -150px;
+    bottom: -100px;
     height: 40px;
     width: 40px;
     left: initial;
@@ -1233,10 +1289,6 @@ body.inner-page-body .inner-page-content__title .number {
 
   body.inner-page-body .inner-page-content.tech {
     background-image: url("../assets/technology/background-technology-tablet.jpg");
-  }
-
-  body.inner-page-body .inner-page-content.tech ._container {
-    padding: 0;
   }
 
   body.inner-page-body .inner-page-content.tech ._container .tab-content .text-container {
